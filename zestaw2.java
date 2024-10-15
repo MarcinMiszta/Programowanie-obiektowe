@@ -61,20 +61,31 @@ public class zestaw2 {
         System.out.println("Iloczyn: "+iloczyn);
         System.out.println("Iloraz: "+iloraz);
         System.out.println("5)");
+        System.out.println("Podaj liczbę: ");
         int l3 = scan.nextInt();
-        int l4 = l3+140;
-        int l5 = l3-31;
-        int l6 = l3*7;
-        int l7 = l3/13;
-        int l8 = l3%7;
-        int l9 = l3/4;
-        double l10 = pow(l3,45);
-
-
-
-
-
-
-
+        double l4 = l3 + 140;
+        double l5 = l3 - 31;
+        double l6 = l3 * 7;
+        double l7 = l3 / 13;
+        double l8 = l3 % 7;
+        double l9 = l3 / 4;
+        double l10 = pow(l3, 45);
+        double l11 = l3 & 67;
+        double l12 = l3 | 59;
+        double l13 = l3 ^ 23;
+        double l14 = l3 << 5;
+        double l15 = l3 >> 6;
+        System.out.println("Liczba wieksza o 140: "+l4);
+        System.out.println("Liczba mniejsza o 31: "+l5);
+        System.out.println("Liczba wieksza 7 razy: "+l6);
+        System.out.println("Liczba mniejsza o 13 razy: "+l7);
+        System.out.println("Liczba modulo 7: "+l8);
+        System.out.println("Liczba całkowita po dzieleniu przez 4: "+l9);
+        System.out.println("Liczba do potęgi 45: "+l10);
+        System.out.println("Iloraz bitowy z 67: "+l11);
+        System.out.println("Suma bitowa z 59: "+l12);
+        System.out.println("XOR z 23: "+l13);
+        System.out.println("Liczba przesunięta o 5 bitów w lewo: "+l14);
+        System.out.println("Liczba przesunieta o 6 bitów w prawo: "+l15);
     }
 }
