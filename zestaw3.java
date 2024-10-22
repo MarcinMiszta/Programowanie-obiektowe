@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
+import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
-
 public class zestaw3 {
     public static void main(String[] args) {
-        cw4();
+        cw7();
     }
     Scanner scan = new Scanner(System.in);
     public static void cw1(){
@@ -72,12 +72,77 @@ public class zestaw3 {
         System.out.println("Podaj n: ");
         int n = scan.nextInt();
         for(int i = 2; i<n;i++){
-            for(int j = 2; j<((i+1)/2);j++){
-                if(i%j!=0){
-                    System.out.println(i);
+            boolean liczbaPierwsza = true;
+            for(int j = 2; j<=sqrt(i);j++){
+                if(i%j == 0){
+                    liczbaPierwsza = false;
+                    break;
                 }
             }
+            if(liczbaPierwsza){
+                System.out.println(i);
+            }
         }
+
+    }
+    public static void cw5(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scan.nextInt();
+        System.out.println("Podaj m: ");
+        int m = scan.nextInt();
+        int max= (int) (pow(10, m));
+        int min= (int) pow(10,m-1);
+        for(int i=min;i<max;i++){
+            if(i%n==0){
+                System.out.printf("%d jest podzielne przez %d\n",i,n);
+            }
+        }
+
+    }
+    public static void cw6(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj wysokość: ");
+        int n = scan.nextInt();
+        System.out.println("Podaj wariant (normalna - 1, odwrócona - 2): ");
+        int wariant = scan.nextInt();
+        switch (wariant){
+            case 1:
+                for(int i = 0; i < n; i++ ){
+                    if(i!=0) System.out.println();
+                    for(int j = n-i; j > 1; j--){
+                        System.out.print(" ");
+                    }
+                    for (int k = 0; k <= i; k++ ){
+                        System.out.print("* ");
+                    }
+
+                }
+                break;
+                case 2:
+                    for(int i = n; i > 0; i-- ){
+                        System.out.println();
+                        for(int j = n-i; j > 0; j--){
+                            System.out.print(" ");
+                        }
+                        for (int k = 0; k < i; k++ ){
+                            System.out.print("* ");
+                        }
+
+                    }
+            }
+
+    }
+    public static void cw7(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scan.nextInt();
+        int wynik = 1;
+        for(int i=1;i<=n;i++){
+            wynik *= i;
+        }
+        System.out.printf("Silnia z %d to %d ",n,wynik);
+
     }
     public static void cw14(){
         Scanner scan = new Scanner(System.in);
