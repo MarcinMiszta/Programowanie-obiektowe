@@ -1,12 +1,12 @@
 import java.util.Scanner;
-
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
+
 public class zestaw3 {
     public static void main(String[] args) {
         cw7();
     }
-    Scanner scan = new Scanner(System.in);
+
     public static void cw1(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj n: ");
