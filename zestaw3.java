@@ -1,10 +1,10 @@
 import java.util.Scanner;
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+
+import static java.lang.Math.*;
 
 public class zestaw3 {
     public static void main(String[] args) {
-        cw7();
+        cw10();
     }
 
     public static void cw1(){
@@ -142,6 +142,61 @@ public class zestaw3 {
             wynik *= i;
         }
         System.out.printf("Silnia z %d to %d ",n,wynik);
+
+    }   public static void cw8(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scan.nextInt();
+        int wynik = 1;
+        if(n%2==0){
+            for(int i=2;i<=n;i+=2){
+                wynik *= i;
+            }
+            }else{
+            for(int i=1;i<=n;i+=2){
+                wynik *= i;
+            }
+        }
+        System.out.printf("Podwójna silnia z %d to %d ",n,wynik);
+
+    }public static void cw9(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scan.nextInt();
+        System.out.println("Podaj m: ");
+        int m = scan.nextInt();
+        int wynik = 1;
+        if(n%m==0){
+            for(int i=m;i<=n;i+=m){
+                wynik *= i;
+            }
+            }
+        if (n%m!=0){
+            for(int i=n%m;i<=n;i+=m){
+                if(i<m) continue;
+                wynik *= i;
+            }
+        }
+        System.out.printf("Silnia stopnia %d z %d to %d ",m,n,wynik);
+
+    }public static void cw10(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scan.nextInt();
+        System.out.println("Podaj k: ");
+        int k = scan.nextInt();
+        class silnia{
+            public static long oblicz(int x){
+                long wynik=1;
+                for(int i=1;i<=x;i++){
+                    wynik *= i;
+                }
+                return wynik;
+            }
+        }
+        long wynik = silnia.oblicz(n)/(silnia.oblicz(k)*(silnia.oblicz(n-k)));
+
+        System.out.printf("Dwumian Newtona k=%d z n=%d to %d ",k,n,wynik);
 
     }
     public static void cw14(){
