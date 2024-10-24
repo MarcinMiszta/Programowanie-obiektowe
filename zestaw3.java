@@ -143,7 +143,8 @@ public class zestaw3 {
         }
         System.out.printf("Silnia z %d to %d ",n,wynik);
 
-    }   public static void cw8(){
+    }
+    public static void cw8(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj n: ");
         int n = scan.nextInt();
@@ -159,7 +160,8 @@ public class zestaw3 {
         }
         System.out.printf("Podwójna silnia z %d to %d ",n,wynik);
 
-    }public static void cw9(){
+    }
+    public static void cw9(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj n: ");
         int n = scan.nextInt();
@@ -179,7 +181,8 @@ public class zestaw3 {
         }
         System.out.printf("Silnia stopnia %d z %d to %d ",m,n,wynik);
 
-    }public static void cw10(){
+    }
+    public static void cw10(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj n: ");
         int n = scan.nextInt();
