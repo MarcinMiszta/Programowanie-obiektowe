@@ -1,7 +1,8 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class Main {
+public class zestaw4
+{
     public static void main(String[] args) {
         //zadanie1
         //System.out.println(Arrays.toString(generujTablice(7,1,13)));
@@ -9,7 +10,9 @@ public class Main {
         //wypisztablice(generujTablice(5,1,5), 3,3);
         //zadanie3
         int[] tab=generujTablice(8,-2,5);
+        int[] tab2=generujZakres(8,-2,5);
         System.out.println(Arrays.toString(tab));
+        System.out.println(Arrays.toString(tab2));
         //ileNieparzystych(tab);
         //ileNieparzystych(tab);
         //ileParzystych(tab);
@@ -31,7 +34,9 @@ public class Main {
         //funkcjaSignum(tab);
         //najdluzszyCiagDodatnich(tab);
         //najdluzszyCiagUjemnych(tab);
-        odwrocTablice(tab);
+        //odwrocTablice(tab);
+        //odwrocTablice2(tab,2,6);
+
     }
 
     public static int[] generujTablice(int n, int minWartosc, int maxWartosc){
@@ -48,8 +53,8 @@ public class Main {
             for(int j=0;j<m;j++){
                 int index= i*m+j;
                 if(index<tab.length){
-                System.out.printf("%5d",tab[index]);
-            }else {
+                    System.out.printf("%5d",tab[index]);
+                }else {
                     System.out.printf("%5d",0);
                 }
             }
@@ -97,7 +102,7 @@ public class Main {
         int max=tab[0];
         for(int i : tab){
             if(i>max) max=i;
-                    }
+        }
         for(int j :tab){
             if(j==max) count++;
         }
@@ -219,7 +224,7 @@ public class Main {
                 l=0;
             }
         }
-            System.out.printf("Najdluzszy ciag dodatnich: %d", count);
+        System.out.printf("Najdluzszy ciag dodatnich: %d", count);
 
     }
     public static void najdluzszyCiagUjemnych(int[] tab){
@@ -233,20 +238,37 @@ public class Main {
                 l=0;
             }
         }
-            System.out.printf("Najdluzszy ciag ujemnych: %d", count);
+        System.out.printf("Najdluzszy ciag ujemnych: %d", count);
 
     }
     public static void odwrocTablice(int[] tab){
-        for(int i=0;i<tab.length;i++){
-            for(int j = tab.length-1;j>i;j--){
+        for(int i=0;i<tab.length/2;i++){
                 int temp=tab[i];
-                tab[i]=tab[j];
-                tab[j]=temp;
-            }
+                tab[i]=tab[tab.length-i-1];
+                tab[tab.length-i-1]=temp;
+
         }
-            System.out.printf(Arrays.toString(tab));
+        System.out.printf(Arrays.toString(tab));
+
+    } public static void odwrocTablice2(int[] tab, int indexStart, int indexStop){
+        for(int i=indexStart;i<=indexStop;i++){
+                int temp=tab[i];
+                tab[i]=tab[indexStop];
+                tab[indexStop]=temp;
+                indexStop--;
+
+        }
+        System.out.printf(Arrays.toString(tab));
 
     }
+    public static int[] generujZakres(int n, int minWartosc, int maxWartosc){
+        int[] tab = new  int[n];
+        Random rand = new Random();
+        int skok = rand.nextInt(maxWartosc-minWartosc)+minWartosc;
+        for(int i=0;i<n;i++){
+            tab[i]=skok*i;
+        }
 
-
+        return tab;
+    }
 }
