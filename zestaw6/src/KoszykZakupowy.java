@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class KoszykZakupowy {
     private static class ProduktWKoszyku{
@@ -26,7 +26,11 @@ public class KoszykZakupowy {
             produkt.usunZMagazynu(ilosc);
         }
     }
+    public void usunProdukt(String nazwa) {
+        listaProduktow.removeIf(produkt -> Objects.equals(produkt.produkt.nazwa, nazwa));
+    }
     public void wyswietlZawartosckoszyka(){
+        System.out.println("Zawartosc koszyka:");
         for(ProduktWKoszyku produkt : listaProduktow){
             produkt.wyswietlInformacje();
         }
