@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 
-public class Klient
+public class Klient extends osoba
 {
-    String imie;
-    String nazwisko;
     ArrayList<Zamowienie> listaZamowien = new ArrayList<>();
 
     public void dodajZamowienie(Zamowienie zamowienie){
@@ -22,9 +20,8 @@ public class Klient
         }
         System.out.println("Łączny koszt zamówień: "+suma);
     }
-
     public Klient(String imie, String nazwisko){
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+        super(imie, nazwisko);
+
     }
 }

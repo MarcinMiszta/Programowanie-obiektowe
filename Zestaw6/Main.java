@@ -5,6 +5,8 @@ public class Main {
         Produkt a = new Produkt("telefon",1000,42);
         Produkt ac = new Produkt("telefon 2",2000,2);
         Produkt b = new Produkt("laptop",9000,4);
+        Spodnie spodnie = new Spodnie("Dresy",79.99,59);
+        System.out.println(spodnie.iloscNaMagazynie);
         KoszykZakupowy k = new KoszykZakupowy();
         k.dodajProdukt(a,5);
         k.dodajProdukt(ac,1);

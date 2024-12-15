@@ -25,6 +25,11 @@ class Produkt{
         this.iloscNaMagazynie -= ilosc;
         }
     }
+    public Produkt(){
+        nazwa="";
+        cena=0;
+        iloscNaMagazynie=0;
+    }
     public Produkt(String nazwa,double cena,int iloscNaMagazynie){
         this.nazwa = nazwa;
         this.cena = cena;
