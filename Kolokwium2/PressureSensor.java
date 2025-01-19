@@ -1,17 +1,19 @@
 public class PressureSensor implements Sensor {
+    private double Value;
+    private String Status;
 
     @Override
     public double readValue() {
-        return 0;
+        return Value;
     }
 
     @Override
     public String getStatus() {
-        return "";
+        return Status;
     }
 
     @Override
     public void reset() {
-
+        this.Status = "Default";
     }
 }
